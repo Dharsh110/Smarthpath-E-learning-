@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+    <title>SmartPath E-Learning Platform</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicon -->
+    <link href="files/img/icon.png" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="files/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="files/img/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="courselink.css">
+    <script defer src="courselink.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="abt.css"> 
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="profile.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    
+    <script type="module" src="firebaseconnection.js"></script>
+
+    <style>
+        .page-header {
+            background: url('files/img/carousel-2.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            height: 100%;
+        }
+    
+        /* Optional: Add an overlay for better text visibility */
+        .page-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+    
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Overlay Styling */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay Content Box */
+.overlay-content {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* OK Button Styling */
+.overlay-content button {
+    width: 100px;
+    padding: 10px;
+    background: #fb873f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.overlay-content button:hover {
+    background: #e06d2f;
+}
+
+
+@keyframes sectionJumpIn {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section-jump {
+    animation: sectionJumpIn 1.5s ease-out;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="ex1.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 30px;"><img src="files/img/icon.png" alt="Icon" style="width: 50px; height: 60px;">
+                SmartPath<span style="color: #fb873f;">E-Learning Platform</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="ex1.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="course1.html" class="nav-item nav-link">Courses</a>
+                <a href="contactus1.html" class="nav-item nav-link">Contact</a>
+                <a href="others.html" class="nav-item nav-link">Others</a>
+                <a href="signup1.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+<!-- Contact Us Header Start -->
+<div class="container-fluid p-0 mb-5">
+    <div class="position-relative section-jump" style="height: 450px;">
+        <img class="position-absolute w-100 h-100" 
+             src="files/img/about.jpg" 
+             style="object-fit: cover;" 
+             alt="Contact Us Background">
+        
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+             style="background: rgba(0,0,0,0.5);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Contact Us</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Us Header End -->
+
+
+ 
+<!-- Contact Start -->
+<section id="contact" class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5 bg-white text-center px-3">Contact Us</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h5>Get In Touch</h5>
+                <p class="mb-4">Have questions? We're here to help! Reach out to us through any of the following channels:</p>
+
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 50px; height: 50px; background-color: #fb873f;">
+                        <i class="fa fa-map-marker-alt text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5>Office</h5>
+                        <p class="mb-0">23/4 Learning Lane, Knowledge City, Bangalore.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 50px; height: 50px; background-color: #fb873f;">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5>Phone</h5>
+                        <p class="mb-0"><a href="tel:+918965474868" class="text-dark text-decoration-none">+91 9865474868</a></p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                        style="width: 50px; height: 50px; background-color: #fb873f;">
+                        <i class="fa fa-envelope-open text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5>Email</h5>
+                        <p class="mb-0"><a href="mailto:support@smartpath.com" class="text-dark text-decoration-none">support@smartpath.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <h5>Send Us a Message</h5>
+                <form id="feedbackForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" name="subject" required placeholder="Subject">
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="message" name="message" required placeholder="Leave a message here"
+                                    style="height: 150px"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact End -->
+
+<!-- Message Confirmation Overlay -->
+<div id="confirmationOverlay" class="overlay">
+    <div class="overlay-content">
+        <h2>Message Sent</h2>
+        <p id="confirmationMessage"></p>
+        <button onclick="reloadPage()" class="btn btn-primary">OK</button>
+    </div>
+</div>
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <p><a class="text-light" href="about.html">About Us</a></p>
+                <p><a class="text-light" href="contactus1.html">Contact Us</a></p>
+                <p><a class="text-light" href="">Privacy Policy</a></p>
+                <p><a class="text-light" href="">Terms & Condition</a></p>
+                <p><a class="text-light" href="">FAQs & Help</a></p>
+            </div>
+            <div class="col-lg-4 col-md-6 contact-info">
+                <h4 class="text-white mb-3">Contact</h4>
+                <div class="contact-info">
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>23/4 Learning Lane, Knowledge City, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9865474868</p>
+                    <p class="mb-2"> <i class="fa fa-envelope me-3 text-white"></i>
+                        <a target="_blank" href="mailto:SmartPathE_learning@gmail.com" style="color: white; text-decoration: none;">SmartPathE_learning@gmail.com</a>
+                    </p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@smartpath.com</p>
+                </div>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/SmartPathE_learning">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/SmartPathE_learning">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/SmartPathE_learning/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/SmartPathE_learning/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://github.com/SmartPathE_learning">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                <p style="color: rgb(249, 240, 240);">Subscribe now and join our growing community of learners committed to lifelong education!</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <form id="subscribeForm">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" id="emailInput" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="ex1.html">SmartPath E-Learning Platform</a>, All Right Reserved.
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<script>
+// Handle form submission
+document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get user input values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var subject = document.getElementById("subject").value;
+    var message = document.getElementById("message").value;
+
+    // Display confirmation overlay
+    var confirmationText = `
+        <strong>Name:</strong> ${name}<br>
+        <strong>Email:</strong> ${email}<br>
+        <strong>Subject:</strong> ${subject}<br>
+        <strong>Message:</strong> ${message}
+    `;
+
+    document.getElementById("confirmationMessage").innerHTML = confirmationText;
+    document.getElementById("confirmationOverlay").style.display = "flex";
+});
+
+// Reload page on clicking OK button
+function reloadPage() {
+    location.reload();
+}
+</script>
+   
+</body>
+</html>

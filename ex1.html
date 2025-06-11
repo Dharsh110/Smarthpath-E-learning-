@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+
+    <title>SmartPath E-Learning Platform</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="files/img/icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="files/style.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="courselink.css">
+    <script defer src="courselink.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style1.css"> 
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="files/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="profile.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+   
+    <script type="module" src="firebaseconnection.js"></script>
+    
+    <style>
+/* General Styling */
+.container-fluid {
+    padding: 0;
+    margin-bottom: 4rem;
+}
+
+/* Carousel Styling */
+.owl-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.owl-carousel .owl-carousel-item {
+    position: relative;
+    height: 700px;
+}
+
+.owl-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.owl-carousel-item .position-absolute {
+    background: rgba(24, 29, 56, .7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Content Styling */
+.container, .row {
+    height: 100%;
+}
+
+.col-sm-10, .col-lg-8 {
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h5 {
+    text-transform: uppercase;
+    color: #fb873f;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    animation: slideInDown 1s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    animation: slideInDown 1s ease-in-out;
+}
+
+p {
+    color: #121111;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 2s ease;
+}
+
+/* Buttons */
+.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #0069d9;
+    border: none;
+    color: white;
+    animation: slideInLeft 1s ease;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    border: none;
+    color: #212529;
+    animation: slideInRight 1s ease;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Feature List */
+.feature-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-list p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feature-list i {
+    color: #333;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h5 { font-size: 1.2rem; }
+    h1 { font-size: 2rem; }
+    .feature-list { flex-direction: column; }
+    .feature-list .col-md-6 { width: 100%; }
+}
+
+/* Overlay Styling */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    background: white;
+    width: 40%;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Form Styling */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input, select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn, .enroll-btn {
+    width: 100%;
+    padding: 10px;
+    background: #fb873f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover, .enroll-btn:hover {
+    background: #e76c2b;
+}
+
+p.mb-2 {
+    color: white !important;  /* Ensures text appears in white */
+}
+
+.contact-info p {
+    color: white !important;
+}
+
+
+.overlay-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Adjust width as needed */
+    position: relative;
+}
+
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: red;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+</style>
+    
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="ex1.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="files/img/icon.png" alt="Icon" style="width: 50px; height: 60px;"> <span style="color: black;">SmartPath</span> 
+                <span style="color: #fb873f;">E-Learning Platform</span>
+            </p>
+            
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="ex1.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="course1.html" class="nav-item nav-link">Courses</a>
+                <a href="contactus1.html" class="nav-item nav-link">Contact</a>
+                <a href="others.html" class="nav-item nav-link">Others</a>
+                <a href="signup1.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+
+                <div id="google_translate_element">
+                </div>
+
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-4">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="files/img/carousel-1.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                    style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class=" text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">Best
+                                    E-learning platform</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Learn Job ready skills from free
+                                    online courses with certificates</h1>
+                                <p class=" text-white mb-4 pb-2">Explore a wide range of courses designed to enhance
+                                    your expertise in technology, business, arts, and more. Start learning today!</p>
+                                <a href="about.html"
+                                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="signup2.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-2 text-center">
+            <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 style="color: rgb(163, 74, 74);">Invest in your professional goals with Secret Coder</h1>
+                <p class="mb-5" style="color: black;">Get unlimited access to over 90% of courses, Projects, Specializations, and
+                    Professional Certificates on Coursera, taught by top instructors.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item text-center pt-3 shadow">
+                    <div class="p-4">
+                        <img src="files/img/icon1.png" alt="" width="60px" class="mb-4">
+                        <h5 class="mb-3" style="color: rgb(163, 74, 74);">Learn anything</h5>
+                        <p style="color: black;">Explore any interest or trending topic, take prerequisites, and advance your skills</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item text-center pt-3 shadow">
+                    <div class="p-4">
+                        <img src="files/img/icon2.png" alt="" width="60px" class="mb-4">
+                        <h5 class="mb-3" style="color: rgb(163, 74, 74);">Save money</h5>
+                        <p style="color: black;">Spend less money on your learning if you plan to take multiple courses this year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item text-center pt-3 shadow">
+                    <div class="p-4">
+                        <img src="files/img/icon3.png" alt="" width="60px" class="mb-4">
+                        <h5 class="mb-3" style="color: rgb(163, 74, 74);">Flexible learning</h5>
+                        <p style="color: black;">Learn at your own pace, move between multiple courses, or switch to a different course</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item text-center pt-3 shadow">
+                    <div class="p-4">
+                        <img src="files/img/icon4.png" alt="" width="60px" class="mb-4">
+                        <h5 class="mb-3" style="color: rgb(163, 74, 74);">Unlimited certificates</h5>
+                        <p style="color: black;">Earn a certificate for every learning program that you complete at no additional cost</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="files/img/about.jpg" alt=""
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start pe-3">About Us</h6>
+                    <h1 class="mb-4" style="color: #fb873f;">Welcome to Secret Coder</h1>
+                    <p class="mb-4">At Secret Coder, we believe in accessible, innovative learning experiences that
+                        adapt to your schedule and learning style. Join us in embracing the future of education and
+                        unlock your potential with our immersive online courses.</p>
+                    <p class="mb-4"> Welcom to Secret Coder, your gateway to boundless learning opportunities. We're
+                        dedicated to democratizing education, offering a diverse range of courses taught by industry
+                        experts. Our mission is to empower learners worldwide, fostering a community-driven platform
+                        where knowledge knows no limits.</p>
+                        <div class="row feature-list">
+                            <div class="col-md-6">
+                                <p><i class="fa fa-arrow-right me-2"></i>Expert Instructors</p>
+                                <p><i class="fa fa-arrow-right me-2"></i>Comprehensive Course Catalog</p>
+                                <p><i class="fa fa-arrow-right me-2"></i>Personalized Learning Paths</p>
+                                <a class="btn text-light py-3 px-5 mt-2" href="about.html">Read More</a>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fa fa-arrow-right me-2"></i>Live Interactive Sessions</p>
+                                <p><i class="fa fa-arrow-right me-2"></i>Community Engagement</p>
+                                <p><i class="fa fa-arrow-right me-2"></i>Certification and Recognition</p>
+                                
+                            </div>
+                            
+                        </div>
+                                            
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Banner-1 Start -->
+    <div class="container-xxl py-5 pt-5 bg-light">
+        <div class="container">
+            <div class="row g-5 ">
+                <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
+
+                    <h1 class="mb-4" style="color: #fb873f;">Explore Free Courses</h1>
+                    <p class="mb-4">Start your online learning journey at Great Learning Academy for free with our
+                        short-term basic courses across various in-demand domains.</p>
+
+                    <a class="btn text-light py-3 px-5 mt-2" href="signup1.html">Start For Free</a>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="files/img/banner-1.jpg" alt=""
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner-1 End -->
+
+
+    <main>
+        
+        <section id="course">
+            <h2>Course Schedule</h2>
+            <table>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Start Date</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <td>Introduction to Python</td>
+                    <td>February 28, 2025</td>
+                    <td>4 Weeks</td>
+                </tr>
+                <tr>
+                    <td>Basics of Web Development</td>
+                    <td>March 31, 2025</td>
+                    <td>6 Weeks</td>
+                </tr>
+                <tr>
+                    <td>Creative Writing</td>
+                    <td>March 15, 2025</td>
+                    <td>3 Weeks</td>
+                </tr>
+                <tr>
+                    <td>Data Science Essentials</td>
+                    <td>April 5, 2025</td>
+                    <td>8 Weeks</td>
+                </tr>
+                <tr>
+                    <td>Java Programming</td>
+                    <td>May 10, 2025</td>
+                    <td>5 Weeks</td>
+                </tr>
+                <tr>
+                    <td>Introduction to AI</td>
+                    <td>June 20, 2025</td>
+                    <td>7 Weeks</td>
+                </tr>
+            </table>
+            
+            <!-- Enroll Now Button -->
+            <button class="enroll-btn" onclick="openEnrollment()">Enroll Now</button>
+        </section>
+        
+
+        
+        <!-- Enrollment Overlay Window -->
+<div id="enrollmentOverlay" class="overlay">
+    <div class="overlay-content">
+        <span class="close-btn" onclick="closeEnrollment()">&times;</span>
+        <h2>Enroll Now</h2>
+        <form id="enrollmentForm" action="/submit" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>-- Select a course --</option>
+                    <option value="python">Introduction to Python</option>
+                    <option value="web">Basics of Web Development</option>
+                    <option value="writing">Creative Writing</option>
+                    <option value="data">Data Science Essentials</option>
+                    <option value="java">Java Programming</option>
+                    <option value="ai">Introduction to AI</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Submit" class="submit-btn" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; transition: background 0.3s ease;" 
+       onmouseover="this.style.backgroundColor='#e76c2b'" 
+       onmouseout="this.style.backgroundColor='#fb873f'">
+
+        </form>
+    </div>
+</div>
+
+    <script>
+        // Open the enrollment overlay
+function openEnrollment() {
+    document.getElementById("enrollmentOverlay").style.display = "flex";
+}
+
+// Close the enrollment overlay
+function closeEnrollment() {
+    document.getElementById("enrollmentOverlay").style.display = "none";
+}
+
+// Handle form submission
+document.getElementById("enrollmentForm").addEventListener("submit", function (event) {
+    event.preventDefault();  // Prevent default form submission
+
+    alert("Enrolled for this course!"); // Show success message
+    location.reload();  // Reload the page after submission
+});
+
+    </script>
+        
+
+    <!-- Banner-2 Start -->
+<section class="pb-5" style="background: #001f3f;">
+    <div class="container-xxl mt-5">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100 bg-light" src="files/img/banner-2.png" alt=""
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4" style="color: #fb873f;">Become an Instructor</h1>
+                    <p class="mb-4 text-white">Instructors from around the world teach millions of learners on Udemy. We provide
+                        the tools and skills to teach what you love.</p>
+
+                    <a class="btn text-light py-3 mt-2" href="instructor.html" style="background-color: #fb873f;">Start Teaching Today</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner-2 End -->
+
+
+    <!-- Categories Section -->
+    
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5" style="color: #fb873f;">Popular Topics to Explore</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat1.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openOverlay()">Microsoft Excel</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat2.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openAWSOverlay()">AWS</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat3.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openPythonOverlay()">Python</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat4.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openJavaOverlay()">Java</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat5.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openWebDesignOverlay()">Web Design</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat6.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openWebDevOverlay()">Web Development</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat7.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openMySQLOverlay()">MySQL</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat8.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openUIUXOverlay()">UI/UX Design</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Overlay Modal -->
+<div id="overlayModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeOverlay()">&times;</span>
+        <img src="files/img/cat1.png" class="img-fluid" alt="categories">
+        <h3><b>Microsoft Excel</b></h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectTo('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectTo('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- AWS Overlay Modal -->
+<div id="awsOverlayModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeAWSOverlay()">&times;</span>
+        <img src="files/img/cat2.png" class="img-fluid" alt="categories">
+        <h3><b>AWS Learning Resources</b></h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToAWS('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToAWS('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Python Modal -->
+<div id="pythonModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closePythonOverlay()">&times;</span>
+        <img src="files/img/cat3.png" class="img-fluid" alt="categories">
+        <h3>Python</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToPython('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToPython('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Java Modal -->
+<div id="javaModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeJavaOverlay()">&times;</span>
+        <img src="files/img/cat4.png" class="img-fluid" alt="categories">
+        <h3>Java</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToJava('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToJava('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- UI/UX Design Modal -->
+<div id="uiUXModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeUIUXOverlay()">&times;</span>
+        <img src="files/img/cat8.png" class="img-fluid" alt="categories">
+        <h3>UI/UX Design</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToUIUX('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToUIUX('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- MySQL Modal -->
+<div id="mySQLModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeMySQLOverlay()">&times;</span>
+        <img src="files/img/cat7.png" class="img-fluid" alt="categories">
+        <h3>MySQL</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToMySQL('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToMySQL('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Web Development Modal -->
+<div id="webDevModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeWebDevOverlay()">&times;</span>
+        <img src="files/img/cat6.png" class="img-fluid" alt="categories">
+        <h3>Web Development</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToWebDev('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToWebDev('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Web Design Modal -->
+<div id="webDesignModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeWebDesignOverlay()">&times;</span>
+        <img src="files/img/cat5.png" class="img-fluid" alt="categories">
+        <h3>Web Design</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToWebDesign('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToWebDesign('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <p><a class="text-light" href="about.html">About Us</a></p>
+                <p><a class="text-light" href="contactus1.html">Contact Us</a></p>
+                <p><a class="text-light" href="">Privacy Policy</a></p>
+                <p><a class="text-light" href="">Terms & Condition</a></p>
+                <p><a class="text-light" href="">FAQs & Help</a></p>
+            </div>
+            <div class="col-lg-4 col-md-6 contact-info">
+                <h4 class="text-white mb-3">Contact</h4>
+                <div class="contact-info">
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>23/4 Learning Lane, Knowledge City, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9865474868</p>
+                    <p class="mb-2"> <i class="fa fa-envelope me-3 text-white"></i>
+                        <a target="_blank" href="mailto:SmartPathE_learning@gmail.com" style="color: white; text-decoration: none;">SmartPathE_learning@gmail.com</a>
+                    </p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@smartpath.com</p>
+                </div>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/SmartPathE_learning">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/SmartPathE_learning">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/SmartPathE_learning/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/SmartPathE_learning/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://github.com/SmartPathE_learning">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                <p style="color: rgb(249, 240, 240);">Subscribe now and join our growing community of learners committed to lifelong education!</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <form id="subscribeForm">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" id="emailInput" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="ex1.html">SmartPath E-Learning Platform</a>, All Right Reserved.
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+</body>
+</html>

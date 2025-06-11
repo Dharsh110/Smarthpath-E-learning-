@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+    <title>SmartPath E-Learning Platform</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicon -->
+    <link href="files/img/icon.png" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="files/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="courselink.css">
+    <script defer src="courselink.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="abt.css"> 
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="profile.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <script type="module" src="firebaseconnection.js"></script>
+    
+    <style>
+        /* General Styling */
+.container-fluid {
+    padding: 0;
+    margin-bottom: 4rem;
+}
+
+/* Carousel Styling */
+.owl-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.owl-carousel .owl-carousel-item {
+    position: relative;
+    height: 700px;
+}
+
+.owl-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.owl-carousel-item .position-absolute {
+    background: rgba(24, 29, 56, .7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Content Styling */
+.container, .row {
+    height: 100%;
+}
+
+.col-sm-10, .col-lg-8 {
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h5 {
+    text-transform: uppercase;
+    color: #fb873f;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    animation: slideInDown 1s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    animation: slideInDown 1s ease-in-out;
+}
+
+p {
+    color: #121111;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 2s ease;
+}
+
+/* Buttons */
+.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #0069d9;
+    border: none;
+    color: white;
+    animation: slideInLeft 1s ease;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    border: none;
+    color: #212529;
+    animation: slideInRight 1s ease;
+}
+
+/* Animation Keyframes */
+@keyframes fadeSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Animation */
+.animated-header {
+    position: relative;
+    animation: fadeSlideDown 1.5s ease-out;
+    overflow: hidden;
+}
+
+/* Header Image Styling (No blur) */
+.header-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Overlay Styling */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(59, 66, 107, 0.4); /* color overlay */
+    z-index: 1;
+}
+
+
+/* Animations */
+@keyframes slideInDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Feature List */
+.feature-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-list p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feature-list i {
+    color: #333;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h5 { font-size: 1.2rem; }
+    h1 { font-size: 2rem; }
+    .feature-list { flex-direction: column; }
+    .feature-list .col-md-6 { width: 100%; }
+}
+
+/* Overlay Styling */
+.overlay, .overlay-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content, .modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal-content {
+    width: 400px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Form Styling */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input, select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn, .enroll-btn {
+    width: 100%;
+    padding: 10px;
+    background: #fb873f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover, .enroll-btn:hover {
+    background: #e76c2b;
+}
+
+p.mb-2, .contact-info p {
+    color: white !important;
+}
+
+/* Header Styling */
+.page-header {
+    background: url('files/img/carousel-2.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+
+.page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Image */
+.header-container {
+    height: 500px;
+    overflow: hidden;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="ex1.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 30px;"><img src="files/img/icon.png" alt="Icon" style="width: 50px; height: 60px;">
+                SmartPath<span style="color: #fb873f;">E-Learning Platform</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="ex1.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="course1.html" class="nav-item nav-link">Courses</a>
+                <a href="contactus1.html" class="nav-item nav-link">Contact</a>
+                <a href="others.html" class="nav-item nav-link">Others</a>
+                <a href="signup1.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+<!-- Header Start -->
+<div class="container-fluid p-0 header-container mb-5" style="height: 450px; position: relative;">
+    <img src="files/img/carousel-1.jpg" 
+         alt="Header Image" 
+         class="position-absolute w-100 h-100" 
+         style="object-fit: cover;">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+         style="background: rgba(0, 0, 0, 0.5);">
+        <h1 class="text-white display-3">Courses</h1>
+    </div>
+</div>
+
+<!-- Header End -->
+
+
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5" style="color: #fb873f;">Popular Topics to Explore</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat1.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openOverlay()">Microsoft Excel</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat2.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openAWSOverlay()">AWS</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat3.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openPythonOverlay()">Python</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat4.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openJavaOverlay()">Java</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat5.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openWebDesignOverlay()">Web Design</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat6.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openWebDevOverlay()">Web Development</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat7.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openMySQLOverlay()">MySQL</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="files/img/cat8.png" class="img-fluid" alt="categories">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center" onclick="openUIUXOverlay()">UI/UX Design</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Overlay Modal -->
+<div id="overlayModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeOverlay()">&times;</span>
+        <img src="files/img/cat1.png" class="img-fluid" alt="categories">
+        <h3><b>Microsoft Excel</b></h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectTo('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectTo('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- AWS Overlay Modal -->
+<div id="awsOverlayModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeAWSOverlay()">&times;</span>
+        <img src="files/img/cat2.png" class="img-fluid" alt="categories">
+        <h3><b>AWS Learning Resources</b></h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToAWS('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToAWS('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Python Modal -->
+<div id="pythonModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closePythonOverlay()">&times;</span>
+        <img src="files/img/cat3.png" class="img-fluid" alt="categories">
+        <h3>Python</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToPython('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToPython('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Java Modal -->
+<div id="javaModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeJavaOverlay()">&times;</span>
+        <img src="files/img/cat4.png" class="img-fluid" alt="categories">
+        <h3>Java</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToJava('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToJava('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- UI/UX Design Modal -->
+<div id="uiUXModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeUIUXOverlay()">&times;</span>
+        <img src="files/img/cat8.png" class="img-fluid" alt="categories">
+        <h3>UI/UX Design</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToUIUX('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToUIUX('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- MySQL Modal -->
+<div id="mySQLModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeMySQLOverlay()">&times;</span>
+        <img src="files/img/cat7.png" class="img-fluid" alt="categories">
+        <h3>MySQL</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToMySQL('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToMySQL('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Web Development Modal -->
+<div id="webDevModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeWebDevOverlay()">&times;</span>
+        <img src="files/img/cat6.png" class="img-fluid" alt="categories">
+        <h3>Web Development</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToWebDev('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToWebDev('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+<!-- Web Design Modal -->
+<div id="webDesignModal" class="overlay-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeWebDesignOverlay()">&times;</span>
+        <img src="files/img/cat5.png" class="img-fluid" alt="categories">
+        <h3>Web Design</h3>
+        <h2>Select an option</h2>
+        <button onclick="redirectToWebDesign('notes')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View Notes</button><br>
+        <button onclick="redirectToWebDesign('youtube')" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View YouTube Video</button>
+        <div id="youtubeContainer" style="display: none;"></div>
+    </div>
+</div>
+
+
+
+   <!-- Courses Start -->
+   <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center px-3">Popular Courses</h6>
+            <h1 class="mb-5" style="color: #fb873f;">Explore new and trending free online courses</h1>
+        </div>
+        <div class="row g-4 py-2">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-1.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <h5 class="mb-1"><a href="single.html" class="text-dark">HTML Course for Beginners</a></h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i> 4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.8L+ Learners</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between p-2">
+                        <small><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
+                        <span class="fw-bold fs-6">₹ 0</span>
+                        <a href="single.html" class="btn btn-primary btn-sm">Enroll Now <i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-2.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
+                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Front End Development-CSS
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-3.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Introduction to JavaScript
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            4.46</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>76L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-4.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
+                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Python Programming
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            3.54</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.3L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-5.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">SQL for Data Science
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
+                            4.54</small>
+                        <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>1.3L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-1"><i
+                                class="fa fa-user me-2"></i>Intermediate</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>5.0
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-6.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">ChatGPT for Beginners
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            3.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.5L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.5
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-7.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">AWS for Beginners
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            4.53</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-8.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
+                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Microsoft Azure Essentials
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
+                            4.64</small>
+                        <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>4.4L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-1"><i
+                                class="fa fa-user me-2"></i>Intermediate</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 149</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-9.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Introduction to MS Excel</h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            4.6</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4.2L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-10.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
+                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Statistics For Data Science
+                           
+                            
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
+                            4.55</small>
+                        <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>5.3L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-1"><i
+                                class="fa fa-user me-2"></i>Intermediate</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-11.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">Java Programming
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            4.45</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="files/img/course-12.png" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1">C for Beginners
+                        </h5>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
+                            4.5</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1.1L+
+                            Learners
+                        </small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-user me-2"></i>Beginner</small>
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1.5
+                            Hrs</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Courses End -->
+            
+    <!-- Optional: Include Bootstrap JS or other necessary JS files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow.js/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+
+    <section id="course">
+        <h2>Course Schedule</h2>
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Start Date</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>Introduction to Python</td>
+                <td>February 28, 2025</td>
+                <td>4 Weeks</td>
+            </tr>
+            <tr>
+                <td>Basics of Web Development</td>
+                <td>March 31, 2025</td>
+                <td>6 Weeks</td>
+            </tr>
+            <tr>
+                <td>Creative Writing</td>
+                <td>March 15, 2025</td>
+                <td>3 Weeks</td>
+            </tr>
+            <tr>
+                <td>Data Science Essentials</td>
+                <td>April 5, 2025</td>
+                <td>8 Weeks</td>
+            </tr>
+            <tr>
+                <td>Java Programming</td>
+                <td>May 10, 2025</td>
+                <td>5 Weeks</td>
+            </tr>
+            <tr>
+                <td>Introduction to AI</td>
+                <td>June 20, 2025</td>
+                <td>7 Weeks</td>
+            </tr>
+        </table>
+
+        <!-- Enroll Now Button -->
+        <button class="enroll-btn" onclick="openEnrollment()">Enroll Now</button>
+    </section>
+
+     <!-- Enrollment Overlay Window -->
+<div id="enrollmentOverlay" class="overlay">
+    <div class="overlay-content">
+        <span class="close-btn" onclick="closeEnrollment()">&times;</span>
+        <h2>Enroll Now</h2>
+        <form id="enrollmentForm" action="/submit" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>-- Select a course --</option>
+                    <option value="python">Introduction to Python</option>
+                    <option value="web">Basics of Web Development</option>
+                    <option value="writing">Creative Writing</option>
+                    <option value="data">Data Science Essentials</option>
+                    <option value="java">Java Programming</option>
+                    <option value="ai">Introduction to AI</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Submit" class="submit-btn" style="background-color: #fb873f; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; transition: background 0.3s ease;" 
+       onmouseover="this.style.backgroundColor='#e76c2b'" 
+       onmouseout="this.style.backgroundColor='#fb873f'">
+
+        </form>
+    </div>
+</div>
+
+    <script>
+        // Open the enrollment overlay
+function openEnrollment() {
+    document.getElementById("enrollmentOverlay").style.display = "flex";
+}
+
+// Close the enrollment overlay
+function closeEnrollment() {
+    document.getElementById("enrollmentOverlay").style.display = "none";
+}
+
+// Handle form submission
+document.getElementById("enrollmentForm").addEventListener("submit", function (event) {
+    event.preventDefault();  // Prevent default form submission
+
+    alert("Enrolled for this course!"); // Show success message
+    location.reload();  // Reload the page after submission
+});
+
+    </script>
+
+    
+
+    <section id="web">
+        <h3 align="center">Web Development courses - <b>Free</b></h3>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HGTJBPNC-Gw?si=2GCfmZFN75nmywlA" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/lfmg-EJ8gm4?si=09QVNS-moCJ4nrJQ" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FYErehuSuuw?si=AvUSPPhaaioWD1v1" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <p><a class="text-light" href="about.html">About Us</a></p>
+                <p><a class="text-light" href="contactus1.html">Contact Us</a></p>
+                <p><a class="text-light" href="">Privacy Policy</a></p>
+                <p><a class="text-light" href="">Terms & Condition</a></p>
+                <p><a class="text-light" href="">FAQs & Help</a></p>
+            </div>
+            <div class="col-lg-4 col-md-6 contact-info">
+                <h4 class="text-white mb-3">Contact</h4>
+                <div class="contact-info">
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>23/4 Learning Lane, Knowledge City, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9865474868</p>
+                    <p class="mb-2"> <i class="fa fa-envelope me-3 text-white"></i>
+                        <a target="_blank" href="mailto:SmartPathE_learning@gmail.com" style="color: white; text-decoration: none;">SmartPathE_learning@gmail.com</a>
+                    </p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@smartpath.com</p>
+                </div>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/SmartPathE_learning">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/SmartPathE_learning">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/SmartPathE_learning/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/SmartPathE_learning/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://github.com/SmartPathE_learning">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                <p style="color: rgb(249, 240, 240);">Subscribe now and join our growing community of learners committed to lifelong education!</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <form id="subscribeForm">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" id="emailInput" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="ex1.html">SmartPath E-Learning Platform</a>, All Right Reserved.
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+<!-- Overlay for "Thank You" message -->
+<div id="overlay" class="overlay">
+    <div class="overlay-content">
+        <p>Thank you for subscribing!</p>
+        <button class="btn btn-success" onclick="closeOverlay()">Close</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        let email = document.getElementById("emailInput").value.trim();
+        
+        if (email !== "") {
+            localStorage.setItem("subscribedEmail", email); // Save to localStorage
+            console.log("Saved Email:", localStorage.getItem("subscribedEmail")); // Log to console
+
+            document.getElementById("overlay").style.display = "flex"; // Show overlay
+            document.getElementById("emailInput").value = ""; // Clear input field
+        } else {
+            alert("Please enter a valid email!"); // Validation check
+        }
+    });
+
+    function closeOverlay() {
+        document.getElementById("overlay").style.display = "none"; // Hide overlay
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+    <title>SmartPath E-Learning Platform</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicon -->
+    <link href="files/img/icon.png" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="files/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="courselink.css">
+    <script defer src="courselink.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="abt.css"> 
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="profile.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script type="module" src="firebaseconnection.js"></script>
+    <script type="module" src="login.js" defer></script>
+  
+    
+    <style>
+        .page-header {
+            background: url('files/img/carousel-2.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            height: 100%;
+        }
+    
+        /* Optional: Add an overlay for better text visibility */
+        .page-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+    
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="ex1.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 30px;"><img src="files/img/icon.png" alt="Icon" style="width: 50px; height: 60px;">
+                SmartPath<span style="color: #fb873f;">E-Learning Platform</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="ex1.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="course1.html" class="nav-item nav-link">Courses</a>
+                <a href="contactus1.html" class="nav-item nav-link">Contact</a>
+                <a href="others.html" class="nav-item nav-link">Others</a>
+                <a href="signup1.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+      <!-- Login Header Start -->
+<div class="container-fluid p-0 mb-5">
+    <div class="position-relative section-jump" style="height: 350px;">
+        <img class="position-absolute w-100 h-100" 
+             src="files/img/login.jpg" 
+             style="object-fit: cover;" 
+             alt="Login Background">
+        
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+             style="background: rgba(0,0,0,0.5);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Login</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Header End -->
+
+    
+<!-- Login Start -->
+<div class="container-xxl py-2 mt-4">
+    <div class="container">
+        <div class="row g-4 wow fadeInUp" data-wow-delay="0.5s ">
+            <center>
+                <form class="shadow p-4" style="max-width: 550px;" id="loginForm">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="mb-5 bg-white text-center px-3">Login</h1>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                                <label for="email">Email Address</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <p><a href="resetpassword.html">Forgot password?</a></p>
+                        </div>
+                        
+                        <div class="col-12">
+                            <button class="btn text-light w-100 py-3" type="submit">Login</button>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <p>Don't have an account? <a class="text-decoration-none" href="signup2.html">Signup</a></p>
+                        </div>
+                    </div>
+                </form>
+            </center>     
+        </div>
+    </div>
+</div>
+<!-- Login End -->
+
+
+<script type="module">
+    import { auth, signInWithEmailAndPassword } from './firebaseconnection.js';
+
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            alert("Login successful! Redirecting...");
+            window.location.href = "ex1.html"; // Redirect to home page
+        } catch (error) {
+            console.error("Error during login:", error);
+            alert("Error during login: " + error.message);
+        }
+    });
+    </script>
+
+
+    
+<!-- 
+ JavaScript 
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        alert("Login Successful! Redirecting...");
+        window.location.href = "ex1.html"; // Redirect to ex1.html
+    });
+</script> -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <p><a class="text-light" href="about.html">About Us</a></p>
+                <p><a class="text-light" href="contactus1.html">Contact Us</a></p>
+                <p><a class="text-light" href="">Privacy Policy</a></p>
+                <p><a class="text-light" href="">Terms & Condition</a></p>
+                <p><a class="text-light" href="">FAQs & Help</a></p>
+            </div>
+            <div class="col-lg-4 col-md-6 contact-info">
+                <h4 class="text-white mb-3">Contact</h4>
+                <div class="contact-info">
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>23/4 Learning Lane, Knowledge City, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9865474868</p>
+                    <p class="mb-2"> <i class="fa fa-envelope me-3 text-white"></i>
+                        <a target="_blank" href="mailto:SmartPathE_learning@gmail.com" style="color: white; text-decoration: none;">SmartPathE_learning@gmail.com</a>
+                    </p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@smartpath.com</p>
+                </div>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://twitter.com/SmartPathE_learning">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/SmartPathE_learning">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/in/SmartPathE_learning/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/SmartPathE_learning/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" target="_blank" href="https://github.com/SmartPathE_learning">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                <p style="color: rgb(249, 240, 240);">Subscribe now and join our growing community of learners committed to lifelong education!</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <form id="subscribeForm">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" id="emailInput" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="ex1.html">SmartPath E-Learning Platform</a>, All Right Reserved.
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
