@@ -10,7 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       alert("Login Successful! Redirecting...");
-      window.location.href = "ex1.html"; // Dashboard/home page
+      window.location.href = "index.html"; // Dashboard/home page
     })
     .catch((error) => {
       alert("Error: " + error.message);
